@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/devglfe/tools.aliunitydev.com
+    - /bin/cp -R . $DEPLOYPATH
+    
