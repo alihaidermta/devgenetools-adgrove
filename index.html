@@ -1,119 +1,157 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="adgrove-site-verification" content="adgrove-verify-m587nm8has7xabcz6lpvwtbtn899sd0v" />
-  <title>DEVGENE Tools - Free Online Tools</title>
+  <title>Tools — All your tools. One place.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..600&display=swap"
     rel="stylesheet"
   />
   <link rel="stylesheet" href="premium.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="#" class="logo">DEVGENE Tools</a>
-      <nav class="nav-links">
+  <div class="ambient" aria-hidden="true">
+    <div class="blob blob-a"></div>
+    <div class="blob blob-b"></div>
+    <div class="blob blob-c"></div>
+  </div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="nav-glass" id="siteNav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand">Tools</a>
+      <nav class="nav-links" aria-label="Primary">
         <a href="#home">Home</a>
         <a href="#tools">Tools</a>
-        <a href="#categories">Categories</a>
         <a href="#about">About</a>
       </nav>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true"></span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true"></span>
+        </button>
+        <a href="#tools" class="btn btn-primary btn-nav">Get Started</a>
+      </div>
+      <button type="button" class="nav-mobile-toggle" id="navMobileToggle" aria-label="Open menu" aria-expanded="false"></button>
+    </div>
+    <div class="nav-mobile" id="navMobile" hidden>
+      <a href="#home">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#about">About</a>
+      <a href="#tools" class="btn btn-primary btn-block">Get Started</a>
     </div>
   </header>
 
   <main>
-    <section id="home" class="hero">
-      <div class="container hero-content">
-        <p class="hero-pill">No signup required</p>
-        <h1>100% Free Online Tools for Everyday Tasks</h1>
-        <p class="hero-subtitle">
-          Text, Calculations, Generators, Image Tools &amp; More
-        </p>
-        <a href="#tools" class="btn btn-primary hero-cta">Start Converting</a>
+    <section id="home" class="hero section-reveal">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="hero-eyebrow">Free · Private · In your browser</p>
+          <h1 class="hero-title">All your tools. One place.</h1>
+          <p class="hero-subtitle">
+            Text utilities, calculators, generators, and image helpers — fast, minimal, and designed to feel as good as native apps.
+          </p>
+          <div class="hero-ctas">
+            <a href="#tools" class="btn btn-primary btn-lg">Start Using Tools</a>
+            <a href="#tools" class="btn btn-glass btn-lg">Explore Tools</a>
+          </div>
+        </div>
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-glass-card glass-panel">
+            <div class="hero-mini-row">
+              <span class="hero-dot"></span>
+              <span class="hero-dot"></span>
+              <span class="hero-dot"></span>
+            </div>
+            <div class="hero-mini-bar"></div>
+            <div class="hero-mini-bar short"></div>
+            <div class="hero-mini-grid">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section id="tools" class="section">
+    <section id="tools" class="tools-section section-reveal">
       <div class="container">
-        <div class="section-heading">
-          <h2>Tools Dashboard</h2>
-          <p>Search, filter by category, and launch any tool instantly.</p>
+        <header class="section-head">
+          <h2>Tool library</h2>
+          <p>Search, filter by category, and open any tool in a focused glass workspace.</p>
+        </header>
+
+        <div class="tools-controls glass-panel controls-panel">
+          <label class="search-field">
+            <span class="sr-only">Search tools</span>
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.75" />
+              <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" />
+            </svg>
+            <input type="search" id="toolSearch" placeholder="Search tools…" autocomplete="off" />
+          </label>
+          <div class="filters-scroll" id="categories">
+            <div class="filters" role="group" aria-label="Filter by category">
+              <button type="button" class="filter-pill active" data-category="all" aria-pressed="true">All</button>
+              <button type="button" class="filter-pill" data-category="text" aria-pressed="false">Text</button>
+              <button type="button" class="filter-pill" data-category="calculator" aria-pressed="false">Calculators</button>
+              <button type="button" class="filter-pill" data-category="generator" aria-pressed="false">Generators</button>
+              <button type="button" class="filter-pill" data-category="image" aria-pressed="false">Image</button>
+              <button type="button" class="filter-pill" data-category="premium" aria-pressed="false">Pro</button>
+            </div>
+          </div>
         </div>
 
-        <div class="dashboard-controls">
-          <div class="search-wrap">
-            <input id="toolSearch" type="text" placeholder="Search tools..." />
-          </div>
-          <div class="filters" id="categories">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="text">Text Tools</button>
-            <button class="filter-btn" data-category="calculator">Calculators</button>
-            <button class="filter-btn" data-category="generator">Generators</button>
-            <button class="filter-btn" data-category="image">Image Tools</button>
-            <button class="filter-btn premium" data-category="premium">Premium Tools</button>
-          </div>
-        </div>
-
+        <div id="toolsSkeleton" class="tools-skeleton" aria-hidden="true"></div>
         <div id="toolsGrid" class="tools-grid"></div>
+        <div id="toolsEmpty" class="empty-state hidden" role="status">
+          <div class="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.75"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="empty-title">No tools match</h3>
+          <p class="empty-text">Try another search or clear filters to see everything again.</p>
+          <button type="button" class="btn btn-glass" id="emptyReset">Show all tools</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about-section section-reveal">
+      <div class="container about-inner glass-panel">
+        <h2>Built for focus</h2>
+        <p>
+          Tools keeps utilities lightweight and local. Your inputs stay in the browser unless a tool explicitly needs network access — no accounts, no clutter, just clear glass UI and smooth motion.
+        </p>
       </div>
     </section>
   </main>
 
-  <section id="about" class="section about-section">
-    <div class="container">
-      <h2>Why DEVGENE Tools</h2>
-      <p>
-        DEVGENE Tools brings practical utilities into one clean workspace. From text processing
-        and calculators to generators, image tools, and PDF conversion unlock flows, everything is
-        designed for speed and simplicity.
-      </p>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <a href="#" class="logo">DEVGENE Tools</a>
-        <p class="footer-copy">Free tools for everyday tasks.</p>
+  <footer class="site-footer section-reveal">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand">Tools</span>
+        <p class="footer-tag">Premium utilities, zero friction.</p>
       </div>
       <div class="footer-links">
         <a href="#home">Home</a>
         <a href="#tools">Tools</a>
-        <a href="#categories">Categories</a>
         <a href="#about">About</a>
       </div>
-      <p class="copyright">© 2026 DEVGENE Tools. All rights reserved.</p>
+      <p class="footer-copy">© <span id="year"></span> Tools. All rights reserved.</p>
     </div>
   </footer>
 
   <div id="toolModal" class="modal hidden" aria-hidden="true">
     <div class="modal-backdrop" id="closeModalBackdrop"></div>
-    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="toolModalTitle">
+    <div class="modal-shell glass-panel modal-glass" role="dialog" aria-modal="true" aria-labelledby="toolModalTitle">
       <div class="modal-header">
         <h3 id="toolModalTitle">Tool</h3>
-        <button id="closeModalBtn" class="icon-btn" aria-label="Close">✕</button>
+        <button type="button" id="closeModalBtn" class="icon-btn" aria-label="Close">×</button>
       </div>
       <div id="toolModalBody" class="modal-body"></div>
-    </section>
-  </div>
-
-  <div id="unlockModal" class="modal hidden" aria-hidden="true">
-    <div class="modal-backdrop" id="closeUnlockBackdrop"></div>
-    <section class="modal-card unlock-card" role="dialog" aria-modal="true" aria-labelledby="unlockModalTitle">
-      <div class="modal-header">
-        <h3 id="unlockModalTitle">Continue to tool</h3>
-        <button id="closeUnlockBtn" class="icon-btn" aria-label="Close unlock modal">✕</button>
-      </div>
-      <div class="modal-body">
-        <p class="unlock-message">Watch a short ad to proceed</p>
-        <button id="watchAdBtn" class="btn btn-primary">Watch Ad</button>
-      </div>
-    </section>
+    </div>
   </div>
 
   <script src="script.js"></script>
