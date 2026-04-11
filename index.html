@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="adgrove-site-verification" content="adgrove-verify-m587nm8has7xabcz6lpvwtbtn899sd0v" />
+  <title>DEVGENE Tools - Free Online Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="premium.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="logo">DEVGENE Tools</a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#tools">Tools</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <p class="hero-pill">No signup required</p>
+        <h1>100% Free Online Tools for Everyday Tasks</h1>
+        <p class="hero-subtitle">
+          Text, Calculations, Generators, Image Tools &amp; More
+        </p>
+        <a href="#tools" class="btn btn-primary hero-cta">Start Converting</a>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Tools Dashboard</h2>
+          <p>Search, filter by category, and launch any tool instantly.</p>
+        </div>
+
+        <div class="dashboard-controls">
+          <div class="search-wrap">
+            <input id="toolSearch" type="text" placeholder="Search tools..." />
+          </div>
+          <div class="filters" id="categories">
+            <button class="filter-btn active" data-category="all">All</button>
+            <button class="filter-btn" data-category="text">Text Tools</button>
+            <button class="filter-btn" data-category="calculator">Calculators</button>
+            <button class="filter-btn" data-category="generator">Generators</button>
+            <button class="filter-btn" data-category="image">Image Tools</button>
+            <button class="filter-btn premium" data-category="premium">Premium Tools</button>
+          </div>
+        </div>
+
+        <div id="toolsGrid" class="tools-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h2>Why DEVGENE Tools</h2>
+      <p>
+        DEVGENE Tools brings practical utilities into one clean workspace. From text processing
+        and calculators to generators, image tools, and PDF conversion unlock flows, everything is
+        designed for speed and simplicity.
+      </p>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a href="#" class="logo">DEVGENE Tools</a>
+        <p class="footer-copy">Free tools for everyday tasks.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#tools">Tools</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">About</a>
+      </div>
+      <p class="copyright">© 2026 DEVGENE Tools. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div id="toolModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="closeModalBackdrop"></div>
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="toolModalTitle">
+      <div class="modal-header">
+        <h3 id="toolModalTitle">Tool</h3>
+        <button id="closeModalBtn" class="icon-btn" aria-label="Close">✕</button>
+      </div>
+      <div id="toolModalBody" class="modal-body"></div>
+    </section>
+  </div>
+
+  <div id="unlockModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-backdrop" id="closeUnlockBackdrop"></div>
+    <section class="modal-card unlock-card" role="dialog" aria-modal="true" aria-labelledby="unlockModalTitle">
+      <div class="modal-header">
+        <h3 id="unlockModalTitle">Continue to tool</h3>
+        <button id="closeUnlockBtn" class="icon-btn" aria-label="Close unlock modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="unlock-message">Watch a short ad to proceed</p>
+        <button id="watchAdBtn" class="btn btn-primary">Watch Ad</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
