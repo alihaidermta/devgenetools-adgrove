@@ -91,6 +91,7 @@
           <button class="button button-primary" id="adgrove-unlock" type="button">Watch Ad to Unlock</button>
           <button class="button button-glass" type="button" data-close="modal">Not now</button>
         </div>
+        <div id="gated-content" class="gated-content" hidden></div>
       `
     );
   }
@@ -99,18 +100,18 @@
     const tool = tools.find((t) => t.id === toolId);
     if (!tool) return;
 
-    openModal(
-      tool.name,
-      `
-        <div class="tool-ui">
-          <p><strong>Unlocked:</strong> ${escapeHtml(tool.name)}</p>
-          <p>This is a simple placeholder tool UI. Replace this panel with the real tool implementation.</p>
-        </div>
-        <div class="modal-actions">
-          <button class="button button-glass" type="button" data-close="modal">Close</button>
-        </div>
-      `
-    );
+    const gated = document.getElementById("gated-content");
+    if (!gated) return;
+
+    gated.innerHTML = `
+      <div class="tool-ui">
+        <p><strong>Unlocked:</strong> ${escapeHtml(tool.name)}</p>
+        <p>This is a simple placeholder tool UI. Replace this panel with the real tool implementation.</p>
+      </div>
+      <div class="modal-actions">
+        <button class="button button-glass" type="button" data-close="modal">Close</button>
+      </div>
+    `;
   }
 
   function renderTools() {
@@ -179,6 +180,25 @@
   // AdGrove unlock logic (required by spec)
   window.AdGrove = window.AdGrove || {};
   window.AdGrove.onContentUnlock = function () {
+    const isOpen = el.modal?.classList?.contains("is-open");
+    if (!isOpen) return;
+
+    const gated = document.getElementById("gated-content");
+    const unlockButton = document.getElementById("adgrove-unlock");
+    if (!gated || !unlockButton) return;
+
+    gated.hidden = false;
+    unlockButton.style.display = "none";
+
+    if (!selectedToolId) {
+      gated.innerHTML = `
+        <div class="tool-ui">
+          <p><strong>Unlocked.</strong> No tool was selected.</p>
+        </div>
+      `;
+      return;
+    }
+
     openTool(selectedToolId);
   };
 

@@ -487,6 +487,14 @@ html[data-theme="dark"] .tool-ui {
   margin-top: 12px;
 }
 
+.gated-content[hidden] {
+  display: none !important;
+}
+
+.gated-content {
+  margin-top: 12px;
+}
+
 body.modal-open {
   overflow: hidden;
 }
